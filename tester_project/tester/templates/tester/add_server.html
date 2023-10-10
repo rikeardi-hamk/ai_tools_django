@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="title">Add Server</h1>
+  <form method="post" class="form">
+    {% csrf_token %}
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        {{ form.name }}
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Address</label>
+      <div class="control">
+        {{ form.address }}
+      </div>
+    </div>
+    <div class="field">
+      <div class="control">
+        <button type="submit" class="button is-primary">Save</button>
+      </div>
+    </div>
+  </form>
+  <a href="{% url 'server_list' %}" class="button is-link">Back to Server List</a>
+{% endblock %}

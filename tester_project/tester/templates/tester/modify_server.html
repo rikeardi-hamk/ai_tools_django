@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="title">Modify Server</h1>
+  <form method="post" class="form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="button is-primary">Save</button>
+  </form>
+  <a href="{% url 'server_list' %}" class="button is-link">Back to Server List</a>
+{% endblock %}

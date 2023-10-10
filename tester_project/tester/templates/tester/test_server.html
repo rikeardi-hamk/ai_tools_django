@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="title">Test Server: {{ server.name }}</h1>
+  <p><strong>Server Address:</strong> {{ server.address }}</p>
+  
+  <div class="columns">
+    <div class="column">
+      <div class="box">
+        <h2 class="subtitle">Ping Test</h2>
+        <p>{{ ping_result }}</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="box">
+        <h2 class="subtitle">DNS Resolution Test</h2>
+        <p>{{ dns_result }}</p>
+      </div>
+    </div>
+  </div>
+
+  <a href="{% url 'server_list' %}" class="button is-link">Back to Server List</a>
+{% endblock %}

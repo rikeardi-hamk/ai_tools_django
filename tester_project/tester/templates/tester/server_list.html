@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="title">Server List</h1>
+  <table class="table is-bordered is-striped is-hoverable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for server in servers %}
+        <tr>
+          <td>{{ server.name }}</td>
+          <td>{{ server.address }}</td>
+          <td>
+            <a href="{% url 'test_server' server.id %}" class="button is-primary is-small">Test</a>
+            <a href="{% url 'modify_server' server.id %}" class="button is-info is-small">Modify</a>
+            <a href="{% url 'delete_server' server.id %}" class="button is-danger is-small">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{% url 'add_server' %}" class="button is-primary">Add Server</a>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="title">Delete Server</h1>
+  <p>Are you sure you want to delete "{{ server.name }}"?</p>
+  <form method="post" class="form">
+    {% csrf_token %}
+    <button type="submit" class="button is-danger">Delete</button>
+  </form>
+  <a href="{% url 'server_list' %}" class="button is-link">Cancel</a>
+{% endblock %}
